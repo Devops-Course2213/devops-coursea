@@ -1,9 +1,9 @@
 #!/bin/bash
 #github api url
-API_URL ="https://api.github.com"
+API_URL="https://api.github.com"
 #github usernam and personal access token
-USERNAME = $neerajakshuluambati
-TOKEN = $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
+USERNAME=$username
+TOKEN=$token
 #user and repository information
 REPO_OWNER = $1
 REPO_NAME = $2
@@ -17,7 +17,7 @@ curl -s -u "${neerajakshulu}:${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}" "$url"
 }
 #function to list users with read access to the repository
 function list_users_with_read_access{
-local endpoint = "repos/${Devops-Course2213}/${devops-course} /collaborators"
+local endpoint="repos/${REPO_OWNER}/${REPO_NAME}/collaborators"
 #fetch the list of collaborators on the reposiroty
 collaborators = "$(github_api_get "#endpoint" | jq -r '.[] | select(.permission.pull == true) | .login')"
 #display the list of collaborators with read access

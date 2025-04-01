@@ -29,7 +29,7 @@ echo "$collaborators"
 fi
 }
 #main script
-echo "listing users with read access to ${Devops-Course2213}/${devops-course}..."
+echo "listing users with read access to ${Devops-Course2213}/${devops-course}"
 list_users_with_read_access()
 
 

@@ -5,13 +5,13 @@ API_URL="https://api.github.com"
 USERNAME=$username
 TOKEN=$token
 #user and repository information
-REPO_OWNER = $1
-REPO_NAME = $2
+REPO_OWNER=$1
+REPO_NAME=$2
 
 #function for make a GET request to the github API
 function github_api_get {
 local endpoin = "$1"
-local url = "{API_URL}/${endpoint}"
+local url  {API_URL}/${endpoint}"
 #send a GET request to the github API with Authentication
 curl -s -u "${neerajakshulu}:${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}" "$url"
 }
@@ -19,7 +19,7 @@ curl -s -u "${neerajakshulu}:${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}" "$url"
 function list_users_with_read_access{
 local endpoint="repos/${REPO_OWNER}/${REPO_NAME}/collaborators"
 #fetch the list of collaborators on the reposiroty
-collaborators = "$(github_api_get "#endpoint" | jq -r '.[] | select(.permission.pull == true) | .login')"
+collaborators="$(github_api_get "#endpoint" | jq -r '.[] | select(.permission.pull == true) | .login')"
 #display the list of collaborators with read access
 if [[ -z "$collaborators"]]; then
 echo "No users with read access found for ${Devops-Course2213}/${devops-course}"

@@ -3,7 +3,7 @@
 API_URL ="https://api.github.com"
 #github usernam and personal access token
 USERNAME = $neerajakshuluambati
-TOKEN = #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
+TOKEN = $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
 #user and repository information
 REPO_OWNER = $1
 REPO_NAME = $2
